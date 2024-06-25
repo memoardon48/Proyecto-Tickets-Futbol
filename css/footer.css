@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root{
+    --azul: #001845;
+    --naranja: #FE5605;
+    --gris: #EEEEEE;
+    --blanco: #FFFFFF;
+    --negroBajo2: #151515;
+    --negroBajo: #1F1F1F;
+    --azul2: #1B223F;
+    --negroTotal: #000000;
+
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+/*----------------Pie de Pagina----------------------------*/
+.pie-pagina{
+    width: 100%;
+    background-color: var(--negroBajo);
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+
+.boxImagen{
+    padding: 0 20%;
+}
+
+
+.boxImagen img{
+    filter: drop-shadow(4px 6px 12px #000);
+}
+
+.pie-pagina .grupo-1 .box h2{
+    color: var(--blanco);
+    margin-bottom: 25px;
+    font-size:  16px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: var(--gris);
+    margin-bottom: 10px;
+    
+}
+
+.menu{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:5px;
+
+}
+
+.menu a{
+    text-decoration: none;
+    color: var(--blanco);
+    
+}
+
+.menu h3{
+    margin: 5px 0;
+    font-size: 13px;
+    color: var(--blanco);
+}
+
+.menu li{
+    margin: 0 20px 10px;
+    list-style-type:none;
+}
+.menu ul{
+    list-style-type:none;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: var(--blanco);
+    margin-right: 10px;
+    background-color: var(--azul2);
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: var(--naranja);
+}
+
+
+.pie-pagina .grupo-2{
+    background-color: var(--negroBajo2);
+    padding: 15px 10px;
+    text-align: center;
+    color: var(--blanco);
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+    
+
+    .boxImagen{
+        padding: 0 30%;
+    }
+    
+    .pie-pagina .grupo-1 .box p{
+        
+        font-size: 13px;
+    }
+    
+}
+
+@media screen and (max-width:500px){
+    .boxImagen{
+        padding: 0 20%;
+    }
+}
+
+@media screen and (max-width:350px){
+    .menu{
+        margin: 0 20px 0;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:5px;
+    
+    }
+    
+}

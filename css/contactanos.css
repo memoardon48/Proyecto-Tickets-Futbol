@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+:root{
+    --azul: #001845;
+    --naranja: #FE5605;
+    --gris: #EEEEEE;
+    --blanco: #FFFFFF;
+    --negroBajo2: #151515;
+    --negroBajo: #1F1F1F;
+    --azul2: #1B223F;
+    --negroTotal: #000000;
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;  
+}
+
+
+/*------------------------------------------------MENU-------------------------------------------------*/
+
+nav{
+    background: var(--azul);
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    
+  }
+  
+  nav::after{
+    content: '';
+    clear: both;
+    display: table;
+  }
+  
+  nav .logo{
+    float: left;
+    color: var(--blanco);
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
+    
+  }
+  nav ul{
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+  }
+  
+  
+  nav ul li{
+    float: left;
+    display: inline-block;
+    background:var(--azul);
+    margin: 0 5px;
+  }
+  
+  nav ul li a{
+    color: var(--blanco);
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+  
+  nav ul li a:hover{
+    color: var();
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ff8f33,
+                0 0 5px #ffb066;
+  
+  }
+  
+  nav ul ul li a:hover{
+    color: var(--naranja);
+    box-shadow: none;
+  }
+  
+  nav ul ul{
+    position: absolute;
+    top: 90px;
+    opacity: 0;
+    border-top: 3px solid var(--naranja) ;
+    visibility: hidden;
+    transition: top .3s;
+  }
+  
+  nav ul ul ul{
+    border-top: none;
+  }
+  nav ul li:hover > ul{
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  nav ul ul li{
+    position:relative;
+    margin: 0px;
+    width: 165px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+  
+  }
+  
+  nav ul ul li a{
+    line-height: 50px;
+  }
+  
+  nav ul ul ul li{
+    position: relative;
+    top: -70px;
+    left: 150px;
+  }
+  
+  .fa-plus{
+    margin-left: 40px;
+    font-size: 15px;
+  
+  }
+  
+  .show, .icon, [id^= "btn"]{
+    display: none;
+  }
+
+  .login{
+    background-color: var(--gris);
+    color: var(--negroTotal);
+    border-radius: 5px;
+    font-weight: 800;
+  }
+
+  .login:hover{
+    background-color: var(--blanco);
+    color: var(--naranja);
+  }
+  
+  @media all and (max-width: 968px){
+    nav ul{
+      margin-right: 0px;
+      float: left;
+    }
+  
+    nav .logo{
+      padding-left: 30px;
+      width: 100%;
+    }
+  
+    nav ul li, nav ul ul li{
+      display: block;
+      width: 100%;
+    }
+  
+    nav ul ul{
+      top: 70px;
+      position: static;
+      border-top: none;
+      float: none;
+      display: none;
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    nav ul ul ul li{
+      position: static;
+    }
+  
+    nav ul ul li{
+      border-bottom: 0px;
+    }
+    nav ul ul a{
+      padding-left:40px;
+    }
+    
+    nav ul ul ul a{
+      padding-left:80px;
+    }
+  
+    .show{
+      display: block ;
+      color: var(--blanco);
+      font-size: 18px;
+      padding: 0 20px;
+      line-height: 70px;
+      cursor: pointer;
+    }
+  
+    .show:hover{
+      color: var(--naranja);
+    }
+  
+    .icon{
+      display: block;
+      color: var(--blanco);
+      position: absolute;
+      right: 40px;
+      line-height: 70px;
+      font-size: 25px;
+      cursor: pointer;
+    }
+    nav ul li a:hover{
+      box-shadow: none;
+    }
+  
+    .show + a, ul{
+      display: none;
+    }
+  
+    [id^= "btn"]:checked+ ul{
+      display: block;
+    }
+
+    .login{
+      margin-left: 10px;
+      
+    }
+  }
+
+/*-----------------------------------------------------CONTENIDO-------------------------------------*/
+
+.contact{
+    position: relative;
+    min-height: 100vh;
+    padding: 100px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column ;
+    background: linear-gradient(180deg, rgba(0,0,0,0.8295693277310925) 0%, rgba(0,0,0,0.83) 100%),url(../img/contactanos/jugadores.webp) ; /*------aqui--------*/
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.contact .content{
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.contact .content p{
+    font-weight: 300;
+    color:#fff
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.container .contactInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+
+}
+
+.contact .contactInfo .box
+{
+    
+    padding: 20px 0;
+    display: flex;
+}
+
+.contact .contactInfo .box .icon2
+{
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.contact .contactInfo .box .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.contact .contactInfo .box .text h3{
+    font-weight: 500;
+    color: var(--naranja);
+}
+
+.contactForm{
+    width: 40%;
+    padding: 40px;
+    background: #fff;
+    
+}
+
+.contactForm form{
+    height: inherit;
+    height: fit-content;
+}
+.contactForm h2{
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contactForm .inputBox{
+    
+    width: 100%;
+    margin: 30px 0;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    
+}
+
+.contactForm .inputBox textarea{
+    resize: none;
+}
+.contactForm .inputBox span{
+    
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 1s;
+    color: #666;
+}
+
+.contactForm .inputBox  input:focus ~ span,
+.contactForm .inputBox  input:valid ~ span,
+.contactForm .inputBox  textarea:focus ~ span,
+.contactForm .inputBox  textarea:focus ~ span
+{
+color: #e91e63;
+font-size: 12px;
+transform: translateY(-20px);
+}
+
+.contactForm .inputBox  input[type="submit"]
+{
+width: 100px;
+background: var(--naranja);
+color: #fff;
+border: none;
+cursor: pointer;
+padding: 10px;
+font-size: 18px;
+}
+
+.inputBox span::after{
+    content: " *";
+    color: #ff0000;
+}
+
+.inputBox, input:invalid{
+    color:#ff0000;
+}
+
+.inputBox, textarea:invalid{
+    color:#ff0000;
+}
+
+@media (max-width: 991px) {
+    
+    .contact{
+        padding: 100px 20px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container .contactInfo
+    {
+        margin-bottom: 40px;
+        
+    }
+
+    .container .contactInfo,
+    .contactForm
+    {
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 285px) {
+
+    .correo{
+        display: block;
+    }
+}
+
+.fa-color{
+    color: var(--naranja);
+}
+
+.form__input-error-message {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-error);
+}

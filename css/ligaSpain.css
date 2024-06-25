@@ -1,0 +1,715 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+  --azul: #001845;
+  --naranja: #FE5605;
+  --gris: #EEEEEE;
+  --blanco: #FFFFFF;
+  --negroBajo2: #151515;
+  --negroBajo: #1F1F1F;
+  --azul2: #1B223F;
+  --negroTotal: #000000;
+
+
+}
+
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  line-height: normal;
+
+}
+
+.contenedorTop {
+  position: relative;
+}
+
+/*------------------------------------------------MENU-------------------------------------------------*/
+
+nav {
+  background: var(--azul);
+  width: 100%;
+  position: absolute;
+  top: 0px;
+
+}
+
+nav::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+nav .logo {
+  float: left;
+  color: var(--blanco);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 70px;
+  padding-left: 60px;
+
+}
+
+nav ul {
+  float: right;
+  list-style: none;
+  margin-right: 40px;
+  position: relative;
+  margin-bottom: 0;
+}
+
+
+nav ul li {
+  float: left;
+  display: inline-block;
+  background: var(--azul);
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: var(--blanco);
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+
+nav ul li a:hover {
+  color: var(--blanco);
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ff8f33,
+    0 0 5px #ffb066;
+
+}
+
+nav ul ul li a:hover {
+  color: var(--naranja);
+  box-shadow: none;
+}
+
+nav ul ul {
+  position: absolute;
+  top: 90px;
+  opacity: 0;
+  border-top: 3px solid var(--naranja);
+  visibility: hidden;
+  transition: top .3s;
+  padding-left: 0;
+}
+
+nav ul ul ul {
+  border-top: none;
+}
+
+nav ul li:hover>ul {
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+
+nav ul ul li {
+  position: relative;
+  margin: 0px;
+  width: 165px;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+
+nav ul ul li a {
+  line-height: 50px;
+}
+
+nav ul ul ul li {
+  position: relative;
+  top: -70px;
+  left: 150px;
+}
+
+.fa-plus {
+  margin-left: 40px;
+  font-size: 15px;
+
+}
+
+.show,
+.icon,
+input {
+  display: none;
+}
+
+
+.login {
+  background-color: var(--gris);
+  color: var(--negroTotal);
+  border-radius: 5px;
+  font-weight: 800;
+}
+
+.login:hover {
+  background-color: var(--blanco);
+  color: var(--naranja);
+}
+
+@media all and (max-width: 968px) {
+  nav ul {
+    margin-right: 0px;
+    float: left;
+  }
+
+  nav .logo {
+    padding-left: 30px;
+    width: 100%;
+  }
+
+  nav ul li,
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul {
+    top: 70px;
+    position: static;
+    border-top: none;
+    float: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav ul ul ul li {
+    position: static;
+  }
+
+  nav ul ul li {
+    border-bottom: 0px;
+  }
+
+  nav ul ul a {
+    padding-left: 40px;
+  }
+
+  nav ul ul ul a {
+    padding-left: 80px;
+  }
+
+  .show {
+    display: block;
+    color: var(--blanco);
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
+
+  .show:hover {
+    color: var(--naranja);
+  }
+
+  .icon {
+    display: block;
+    color: var(--blanco);
+    position: absolute;
+    right: 40px;
+    line-height: 70px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  nav ul li a:hover {
+    box-shadow: none;
+  }
+
+  .show+a,
+  ul {
+    display: none;
+  }
+
+  [id^="btn"]:checked+ul {
+    display: block;
+  }
+
+  .login {
+    margin-left: 10px;
+
+  }
+}
+
+
+/*---------------------------------------------------------Estilos del banner inicial---------------------------------------------------------*/
+.banner {
+  background: linear-gradient(10deg, rgba(9, 0, 0, 1) 6%, rgba(9, 0, 0, 1) 14%, rgba(11, 2, 2, 0.3617822128851541) 100%, rgba(10, 1, 1, 0.2329306722689075) 100%), url(../img/laLiga/bbva_1000.webp);
+  /*------aqui--------*/
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 650px;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blanco);
+}
+
+.cajaBanner {
+  height: 40%;
+  color: var(--blanco);
+  padding: 20px;
+  margin: 10px 10px 30px;
+
+
+}
+
+
+@media only screen and (min-width: 600px) {
+
+  .cajaBanner {
+    margin: 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .cajaBanner {
+    margin: 50px 50px 50px 10%;
+    height: 45%;
+  }
+
+  .cajaBanner h1 {
+    font-size: 50px;
+  }
+
+
+}
+
+/*---------------------------------------------------------Estilos de la parte donde estan los tickets---------------------------------------------------------*/
+
+.areaTickets {
+  background-color: var(--gris);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.areaTickets h2 {
+  margin: 60px 0;
+  color: var(--naranja);
+  font-size: 30px;
+}
+
+.areaTickets h2::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: var(--naranja);
+  margin: auto;
+  display: block;
+}
+
+.areaTickets h2:hover::after {
+  width: 100%;
+  transition: width 0.2s linear;
+}
+
+@media only screen and (max-width: 450px) {
+  .areaTickets h2 {
+    font-size: 20px;
+  }
+}
+
+
+/*Estilos de los tickets*/
+.ticket {
+  margin: 20px;
+  height: 370px;
+  background-color: var(--negroBajo);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.decoracion {
+  height: 10%;
+  background-image: url(../img/laLiga/etiquetaLaLiga.webp);
+  /*------aqui--------*/
+  background-size: cover;
+}
+
+.infoTicket {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.infoIzquierda {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoDerecha {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.infoDerecha h3 {
+  color: var(--blanco);
+  font-weight: 200;
+  margin: 0 0 10px 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.infoDerecha h3:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--naranja);
+  text-underline-offset: 5px;
+}
+
+.infoImagenes {
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.infoDetalles {
+  height: 40%;
+  color: var(--blanco);
+  text-align: center;
+}
+
+.infoImg {
+  color: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoImg img {
+  width: 60px;
+  height: 60px;
+}
+
+.infoImg p {
+  font-size: 13px;
+  text-align: center;
+}
+
+.spanVS {
+  font-size: 25px;
+  text-align: center;
+  font-weight: 800;
+}
+
+
+
+@media only screen and (max-width: 599px) {
+  .ticket {
+    width: 95% !important;
+
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+  .ticket {
+    flex-direction: row;
+  }
+
+  .decoracion {
+    height: inherit;
+  }
+
+  .infoTicket {
+    height: inherit;
+    flex-direction: row;
+  }
+
+  .infoDerecha,
+  .infoIzquierda {
+    height: inherit;
+  }
+
+  .infoDerecha {
+    align-items: flex-end;
+    justify-content: flex-end;
+
+  }
+
+  .infoImagenes {
+    justify-content: flex-start;
+    margin: 0 0 0 5%;
+  }
+
+  .infoDetalles {
+    color: var(--blanco);
+    text-align: left;
+    font-size: 20px;
+    margin: 0 0 0 5%;
+    font-weight: 800;
+  }
+
+  .infoDerecha h3 {
+    margin: 0 15% 0 0;
+  }
+
+  .infoDerecha h3:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--naranja);
+    text-underline-offset: 10px;
+  }
+
+
+}
+
+
+/*--------estilos del boton--------*/
+
+
+.btnComprar {
+  margin: 0 0 10px 0;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  transition: all .2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--negroTotal);
+  background-color: var(--blanco);
+}
+
+
+.btnComprar:hover {
+  transform: translateY(-3px);
+  background-color: var(--blanco);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btnComprar:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btnComprar::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btnComprar::after {
+  background-color: var(--blanco);
+}
+
+.btnComprar:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .btnComprar {
+    padding: 20px;
+    margin: 10% 20px 20%;
+  }
+
+}
+
+/*---------------------------------------------------------Estilo de la ventana modal-------------------------------------------------------------*/
+.modal-header {
+  background-color: var(--azul);
+
+}
+
+.subtituloPrecios {
+  background-color: var(--naranja);
+
+}
+
+.row {
+  font-weight: 600;
+}
+
+.rowPrecio:hover {
+  background-color: var(--gris);
+}
+
+/*---------------------------------------------------------Estilo de la publicidad-------------------------------------------------------------*/
+.publicidad {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+
+}
+
+.publicidad a {
+  display: block;
+  width: 100%;
+  height: 50%;
+}
+
+.publicidad a img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  .publicidad {
+    flex-direction: row;
+    height: 300px;
+
+  }
+
+  .publicidad .img1 {
+    width: 40%;
+    height: auto;
+  }
+
+  .publicidad .img2 {
+    width: 60%;
+    height: auto;
+  }
+
+}
+
+
+
+/*------------------------------------------------ESTILOS BASADOS EN 12 COLUMNAS*------------------------------------------------------------------------/
+
+
+
+/*ESTILO PARA DISPOSITIVOS MOVILES*/
+[class*="coll-"] {
+  width: 100%;
+}
+
+
+/*ESTILO PARA TABLETS*/
+
+
+@media only screen and (min-width: 600px) {
+  .coll-s-1 {
+    width: 8.33%
+  }
+
+  .coll-s-2 {
+    width: 16.66%
+  }
+
+  .coll-s-3 {
+    width: 25%
+  }
+
+  .coll-s-4 {
+    width: 33.33%
+  }
+
+  .coll-s-5 {
+    width: 41.66%
+  }
+
+  .coll-s-6 {
+    width: 50%
+  }
+
+  .coll-s-7 {
+    width: 58.33%
+  }
+
+  .coll-s-8 {
+    width: 66.66%
+  }
+
+  .coll-s-9 {
+    width: 75%
+  }
+
+  .coll-s-10 {
+    width: 83.33%
+  }
+
+  .coll-s-11 {
+    width: 91.66%
+  }
+
+  .coll-s-12 {
+    width: 100%
+  }
+}
+
+/*ESTILO PARA ESCRITORIO*/
+@media only screen and (min-width: 768px) {
+  .coll-1 {
+    width: 8.33%
+  }
+
+  .coll-2 {
+    width: 16.66%
+  }
+
+  .coll-3 {
+    width: 25%
+  }
+
+  .coll-4 {
+    width: 33.33%
+  }
+
+  .coll-5 {
+    width: 41.66%
+  }
+
+  .coll-6 {
+    width: 50%
+  }
+
+  .coll-7 {
+    width: 58.33%
+  }
+
+  .coll-8 {
+    width: 66.66%
+  }
+
+  .coll-9 {
+    width: 75%
+  }
+
+  .coll-10 {
+    width: 83.33%
+  }
+
+  .coll-11 {
+    width: 91.66%
+  }
+
+  .coll-12 {
+    width: 100%
+  }
+}

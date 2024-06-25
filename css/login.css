@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root{
+    --azul: #001845;
+    --naranja: #FE5605;
+    --gris: #EEEEEE;
+    --blanco: #FFFFFF;
+    --negroBajo2: #151515;
+    --negroBajo: #1F1F1F;
+    --azul2: #1B223F;
+    --negroTotal: #000000;
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    --border-radius: 4px;
+
+
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;    
+}
+
+
+main {
+      
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-color: var(--gris);
+    background-size: cover;
+}
+
+
+/*------------------------------------------------MENU-------------------------------------------------*/
+
+nav{
+    background: var(--azul);    
+    width: 100%;
+    
+  }
+  
+  nav::after{
+    content: '';
+    clear: both;
+    display: table;
+  }
+  
+  nav .logo{
+    float: left;
+    color: var(--blanco);
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
+    
+  }
+  nav ul{
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+  }
+  
+  
+  nav ul li{
+    float: left;
+    display: inline-block;
+    background:var(--azul);
+    margin: 0 5px;
+  }
+  
+  nav ul li a{
+    color: var(--blanco);
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+  
+  nav ul li a:hover{
+    color: var();
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ff8f33,
+                0 0 5px #ffb066;
+  
+  }
+  
+  nav ul ul li a:hover{
+    color: var(--naranja);
+    box-shadow: none;
+  }
+  
+  nav ul ul{
+    position: absolute;
+    top: 90px;
+    opacity: 0;
+    border-top: 3px solid var(--naranja) ;
+    visibility: hidden;
+    transition: top .3s;
+  }
+  
+  nav ul ul ul{
+    border-top: none;
+  }
+  nav ul li:hover > ul{
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  nav ul ul li{
+    position:relative;
+    margin: 0px;
+    width: 165px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+  
+  }
+  
+  nav ul ul li a{
+    line-height: 50px;
+  }
+  
+  nav ul ul ul li{
+    position: relative;
+    top: -70px;
+    left: 150px;
+  }
+  
+  .fa-plus{
+    margin-left: 40px;
+    font-size: 15px;
+  
+  }
+  
+  .show, .icon, input{
+    display: none;
+  }
+
+  .login{
+    background-color: var(--gris);
+    color: var(--negroTotal);
+    border-radius: 5px;
+    font-weight: 800;
+  }
+
+  .login:hover{
+    background-color: var(--blanco);
+    color: var(--naranja);
+  }
+  
+  @media all and (max-width: 968px){
+    nav ul{
+      margin-right: 0px;
+      float: left;
+    }
+  
+    nav .logo{
+      padding-left: 30px;
+      width: 100%;
+    }
+  
+    nav ul li, nav ul ul li{
+      display: block;
+      width: 100%;
+    }
+  
+    nav ul ul{
+      top: 70px;
+      position: static;
+      border-top: none;
+      float: none;
+      display: none;
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    nav ul ul ul li{
+      position: static;
+    }
+  
+    nav ul ul li{
+      border-bottom: 0px;
+    }
+    nav ul ul a{
+      padding-left:40px;
+    }
+    
+    nav ul ul ul a{
+      padding-left:80px;
+    }
+  
+    .show{
+      display: block ;
+      color: var(--blanco);
+      font-size: 18px;
+      padding: 0 20px;
+      line-height: 70px;
+      cursor: pointer;
+    }
+  
+    .show:hover{
+      color: var(--naranja);
+    }
+  
+    .icon{
+      display: block;
+      color: var(--blanco);
+      position: absolute;
+      right: 40px;
+      line-height: 70px;
+      font-size: 25px;
+      cursor: pointer;
+    }
+    nav ul li a:hover{
+      box-shadow: none;
+    }
+  
+    .show + a, ul{
+      display: none;
+    }
+  
+    [id^= "btn"]:checked+ ul{
+      display: block;
+    }
+
+    .login{
+      margin-left: 10px;
+      
+    }
+  }
+
+  /*----------------------------------------CONTENIDO---------------------------------------*/
+
+.container {
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: var(--blanco);
+}
+
+
+.form--hidden {
+    display: none;
+}
+
+
+.form > *:first-child {
+    margin-top: 0;
+}
+
+.form > *:last-child {
+    margin-bottom: 0;
+}
+
+.form__title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form__message {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form__message--success {
+    color: var(--color-success);
+}
+
+.form__message--error {
+    color: var(--color-error);
+}
+
+.form__input-group {
+    margin-bottom: 1rem;
+}
+
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.form__input:focus {
+    border-color: var(--gris);
+    background: #ffffff;
+}
+
+.form__input--error {
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+.form__input-error-message {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error);
+}
+
+.form__button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--naranja);
+}
+
+.form__button:hover {
+    background: #b9450e;
+}
+
+.form__button:active {
+    transform: scale(0.98);
+}
+
+.form__text {
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+.form__link {
+    color: var(--negroTotal);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form__link:hover {
+    text-decoration: underline;
+}
+
+.form2{
+  height: 170vh;
+}

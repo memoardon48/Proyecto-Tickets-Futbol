@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root{
+    --azul: #001845;
+    --naranja: #FE5605;
+    --gris: #EEEEEE;
+    --blanco: #FFFFFF;
+    --negroBajo2: #151515;
+    --negroBajo: #1F1F1F;
+    --azul2: #1b223f;
+    --negroTotal: #000000;
+
+
+}
+
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    /*background-color: #eeeeee;*/
+}
+
+
+
+/*------------------------------------------------MENU-------------------------------------------------*/
+
+nav{
+    background: var(--azul);
+    position: absolute;
+    top: 0px;
+    width: 100%;
+      
+    }
+    
+    nav::after{
+      content: '';
+      clear: both;
+      display: table;
+    }
+    
+    nav .logo{
+      float: left;
+      color: var(--blanco);
+      font-size: 27px;
+      font-weight: 600;
+      line-height: 70px;
+      padding-left: 60px;
+      
+    }
+    nav ul{
+      float: right;
+      list-style: none;
+      margin-right: 40px;
+      position: relative;
+    }
+    
+    
+    nav ul li{
+      float: left;
+      display: inline-block;
+      background:var(--azul);
+      margin: 0 5px;
+    }
+    
+    nav ul li a{
+      color: var(--blanco);
+      text-decoration: none;
+      line-height: 70px;
+      font-size: 18px;
+      padding: 8px 15px;
+    }
+    
+    nav ul li a:hover{
+      color: var();
+      border-radius: 5px;
+      box-shadow: 0 0 5px #ff8f33,
+                  0 0 5px #ffb066;
+    
+    }
+    
+    nav ul ul li a:hover{
+      color: var(--naranja);
+      box-shadow: none;
+    }
+    
+    nav ul ul{
+      position: absolute;
+      top: 90px;
+      opacity: 0;
+      border-top: 3px solid var(--naranja) ;
+      visibility: hidden;
+      transition: top .3s;
+    }
+    
+    nav ul ul ul{
+      border-top: none;
+    }
+    nav ul li:hover > ul{
+      top: 70px;
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    nav ul ul li{
+      position:relative;
+      margin: 0px;
+      width: 165px;
+      float: none;
+      display: list-item;
+      border-bottom: 1px solid rgba(0,0,0,0.3);
+    
+    }
+    
+    nav ul ul li a{
+      line-height: 50px;
+    }
+    
+    nav ul ul ul li{
+      position: relative;
+      top: -70px;
+      left: 150px;
+    }
+    
+    .fa-plus{
+      margin-left: 40px;
+      font-size: 15px;
+    
+    }
+    
+    .show, .icon, input{
+      display: none;
+    }
+  
+    .login{
+      background-color: var(--gris);
+      color: var(--negroTotal);
+      border-radius: 5px;
+      font-weight: 800;
+    }
+  
+    .login:hover{
+      background-color: var(--blanco);
+      color: var(--naranja);
+    }
+    
+    @media all and (max-width: 968px){
+      nav ul{
+        margin-right: 0px;
+        float: left;
+      }
+    
+      nav .logo{
+        padding-left: 30px;
+        width: 100%;
+      }
+    
+      nav ul li, nav ul ul li{
+        display: block;
+        width: 100%;
+      }
+    
+      nav ul ul{
+        top: 70px;
+        position: static;
+        border-top: none;
+        float: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+      }
+    
+      nav ul ul ul li{
+        position: static;
+      }
+    
+      nav ul ul li{
+        border-bottom: 0px;
+      }
+      nav ul ul a{
+        padding-left:40px;
+      }
+      
+      nav ul ul ul a{
+        padding-left:80px;
+      }
+    
+      .show{
+        display: block ;
+        color: var(--blanco);
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+      }
+    
+      .show:hover{
+        color: var(--naranja);
+      }
+    
+      .icon{
+        display: block;
+        color: var(--blanco);
+        position: absolute;
+        right: 40px;
+        line-height: 70px;
+        font-size: 25px;
+        cursor: pointer;
+      }
+      nav ul li a:hover{
+        box-shadow: none;
+      }
+    
+      .show + a, ul{
+        display: none;
+      }
+    
+      [id^= "btn"]:checked+ ul{
+        display: block;
+      }
+  
+      .login{
+        margin-left: 10px;
+        
+      }
+    }
+  
+    .contenedorTop{
+      position: relative;
+  }
+  /*------------------------------------------------------------ENCABEZADO------------------------------------------------------------------------------------*/
+  
+  .encabezado{
+    background: url(../img/mundialInfo/fondo.png) ; /*------aqui--------*/
+    position: relative;     
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   
+  }
+  
+  .cajaImagen{
+  text-align: center;
+    height: 60%;
+    margin: 90px 0 0 0;
+  }
+  
+  .cajaImagen img{
+    filter:drop-shadow(4px 6px 2px var(--azul));
+    
+  }
+  
+  .cajaTexto{
+    text-align: center;
+    height: 40%;     
+    
+    
+  }
+  
+  .cajaTexto h1{
+    
+    font-size: 60px;
+    margin: 0;
+    color: var(--blanco);
+    font-weight: 900px;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .seccion1 h1{
+      font-size: 55px;
+    }
+  }
+  
+
+
+    
+/*         contenido*/
+
+.seccion1{
+    padding: 20px;
+    height: 550px;
+}
+.cajaPadre{
+    
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    align-items: center;
+    
+}
+
+.cajaHijo{
+    flex: 1 0 auto;
+    width: 300px;
+    height: 90%;
+    background-color: var(--blanco);
+    margin: 0 8px;
+    border-radius: 40px 40px 40px 40px;
+    -moz-border-radius: 40px 40px 40px 40px;
+    -webkit-border-radius: 40px 40px 40px 40px;
+    border: 0px solid #000000;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-decoration: none;
+}
+
+.seccion1 h2{
+    margin: 30px 20px;
+}
+.cajaHijo img{
+    width:100%;
+    height: 60%;
+    border-radius: 40px 40px 0px 0px;
+    
+}
+.cajaHijo  h3{
+    margin: 10px 50px;
+    
+}
+
+.cajaHijo h3{
+    color: var(--azul);   
+    
+}
+
+@media only screen and  (min-width: 1000px){
+    .cajaPadre{
+    
+        height: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap:nowrap;
+        overflow:visible;
+        align-items: center;
+        
+    }
+    .cajaHijo{
+      margin: 20px;
+    }
+    .cajaHijo:hover{
+        transform: scale(1.05);
+    }
+    
+}
+
+.introPrecios{
+    background-color:var(--azul2);
+    color: var(--blanco);    
+    text-align: center;
+    height: auto;
+    padding: 50px;
+}
+
+.introPrecios p{
+    font-size: 20px;
+    margin: auto;
+}
+
+.table-container{
+    padding: 20px 10% 40px;
+    margin: 10px auto 0;
+}
+
+.heading{
+    font-size: 40px;
+    text-align: center;
+    color: var(--negroTotal);
+    margin-bottom: 40px;
+    
+}
+
+.table{
+    width:100%;
+    border-collapse: collapse;
+}
+
+.table thead{
+    background-color: var(--naranja);
+    border-bottom: solid 5px var(--naranja);
+    
+
+}
+
+.table thead tr th{
+    font-size: 14px;
+    font-weight: medium;
+    letter-spacing: 0.35px;
+    color:var(--negroTotal);
+    opacity:1;
+    padding: 12px; 
+    vertical-align: top;
+    
+  
+}
+
+.table tbody tr td{
+    font-size: 14px;
+    letter-spacing: 0.35px;
+    font-weight: normal;
+    color: var(--negroTotal) ;
+    padding: 8px;
+    text-align: center;
+    
+}
+
+.table .text_open{
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.35;
+    color:var(--gris);
+}
+
+.th, td{
+    padding: 20px;
+}
+
+tr:nth-child(even){
+    background-color: var(--gris);
+
+}
+
+tr:hover td{
+    background-color: var(--gris);
+    
+    color: var(--blanco);
+
+}
+
+tr:hover::before{
+   
+    background-color: var(--azul);
+    color:  #e12e2e;
+}
+
+@media(max-width: 768px){
+    .table thead{
+        display: none;
+    }
+    .table, .table tbody,.table tr,.table td{
+        display: block;
+        width: 100%;
+    }
+    .table tr{
+        margin-bottom: 15px;
+    }
+    .table tbody tr td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    table td:before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50;
+        padding-left: 15px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: left;
+    }
+}

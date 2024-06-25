@@ -1,0 +1,704 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap');
+
+:root{
+    --azul: #001845;
+    --naranja: #FE5605;
+    --gris: #EEEEEE;
+    --blanco: #FFFFFF;
+    --negroBajo2: #151515;
+    --negroBajo: #1F1F1F;
+    --azul2: #1b223f;
+    --negroTotal: #000000;
+
+
+}
+
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.contenedorTop{
+    position: relative;
+}
+
+
+/*------------------------------------------------MENU-------------------------------------------------*/
+
+nav{
+  background: var(--azul);
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  
+}
+
+nav::after{
+  content: '';
+  clear: both;
+  display: table;
+}
+
+nav .logo{
+  float: left;
+  color: var(--blanco);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 70px;
+  padding-left: 60px;
+  
+}
+nav ul{
+  float: right;
+  list-style: none;
+  margin-right: 40px;
+  position: relative;
+}
+
+
+nav ul li{
+  float: left;
+  display: inline-block;
+  background:var(--azul);
+  margin: 0 5px;
+}
+
+nav ul li a{
+  color: var(--blanco);
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+
+nav ul li a:hover{
+  color: var();
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ff8f33,
+              0 0 5px #ffb066;
+
+}
+
+nav ul ul li a:hover{
+  color: var(--naranja);
+  box-shadow: none;
+}
+
+nav ul ul{
+  position: absolute;
+  top: 90px;
+  opacity: 0;
+  border-top: 3px solid var(--naranja) ;
+  visibility: hidden;
+  transition: top .3s;
+}
+
+nav ul ul ul{
+  border-top: none;
+}
+nav ul li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+
+nav ul ul li{
+  position:relative;
+  margin: 0px;
+  width: 165px;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+
+}
+
+nav ul ul li a{
+  line-height: 50px;
+}
+
+nav ul ul ul li{
+  position: relative;
+  top: -70px;
+  left: 150px;
+}
+
+.fa-plus{
+  margin-left: 40px;
+  font-size: 15px;
+
+}
+
+.show, .icon, input{
+  display: none;
+}
+
+.login{
+  background-color: var(--gris);
+  color: var(--negroTotal);
+  border-radius: 5px;
+  font-weight: 800;
+}
+
+.login:hover{
+  background-color: var(--blanco);
+  color: var(--naranja);
+}
+
+@media all and (max-width: 968px){
+  nav ul{
+    margin-right: 0px;
+    float: left;
+  }
+
+  nav .logo{
+    padding-left: 30px;
+    width: 100%;
+  }
+
+  nav ul li, nav ul ul li{
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul{
+    top: 70px;
+    position: static;
+    border-top: none;
+    float: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav ul ul ul li{
+    position: static;
+  }
+
+  nav ul ul li{
+    border-bottom: 0px;
+  }
+  nav ul ul a{
+    padding-left:40px;
+  }
+  
+  nav ul ul ul a{
+    padding-left:80px;
+  }
+
+  .show{
+    display: block ;
+    color: var(--blanco);
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
+
+  .show:hover{
+    color: var(--naranja);
+  }
+
+  .icon{
+    display: block;
+    color: var(--blanco);
+    position: absolute;
+    right: 40px;
+    line-height: 70px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  nav ul li a:hover{
+    box-shadow: none;
+  }
+
+  .show + a, ul{
+    display: none;
+  }
+
+  [id^= "btn"]:checked+ ul{
+    display: block;
+  }
+
+  .login{
+    margin-left: 10px;
+    
+  }
+}
+
+/*------------------------------------------------ESTILO VIDEO HERO----------------------------------------*/
+.heroVideo{
+    position: relative;
+    height: 100vh;
+    
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroVideo video{
+    z-index: -1;
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.capaHero{
+    background: radial-gradient(circle, rgba(45,44,41,0.4234068627450981) 0%, rgba(0,0,0,0.7875525210084033) 100%);
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.capaHero h1{
+    font-family: 'Oxygen', sans-serif;
+    font-size: 50px;
+    color: var(--blanco);
+    margin: 0;
+}
+
+.spanTickets{
+    font-family: 'Oxygen', sans-serif;
+    color: transparent;
+    -webkit-text-stroke: 3px var(--blanco);
+    text-shadow: 7px 3px 4px var(--naranja);
+}
+
+.capaHero p{
+    color: var(--blanco);
+    font-size: 20px;
+
+}
+
+.capaHero img{
+    filter:drop-shadow(4px 6px 2px var(--negroTotal));
+}
+
+@media only screen and (min-width: 600px) {
+    .capaHero h1{
+        font-size: 100px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    .capaHero h1{
+        font-size: 150px;
+    }
+    
+}
+
+.flecha{
+    filter: none!important;
+    position: relative;
+    
+    animation-name: animacionFlecha;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes animacionFlecha{
+    0% {top:65px;}
+    50%{top: 75px;}    
+    100%{top: 85px;}
+}
+
+
+/*------------------------------------------------ESTILO SECCCIONES------------------------------------------------------------------------*/
+.seccion1, .seccion2, .seccion3{
+    height: 85vh;
+    background-color: var(--gris);
+    padding: 10px;
+}
+
+/*------------------------------------------------ESTILO SECCCION 1------------------------------------------------------------------------*/
+
+.seccion1 h2{
+    margin: 30px 5%;
+    
+}
+
+.cajaPadre{
+    
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    align-items: center;
+    
+}
+
+.cajaHijo{
+    flex: 1 0 auto;
+    width: 300px;
+    height: 90%;
+    background-color: var(--blanco);
+    margin: 0 8px;
+    border-radius: 40px 40px 40px 40px;
+    -moz-border-radius: 40px 40px 40px 40px;
+    -webkit-border-radius: 40px 40px 40px 40px;
+    border: 0px solid #000000;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-decoration: none;
+}
+
+.cajaHijo img{
+    width:100%;
+    height: 75%;
+    border-radius: 40px 40px 0px 0px;
+    
+}
+.cajaHijo p, h3{
+    margin: 10px 50px;
+    
+}
+
+.cajaHijo h3{
+    color: var(--azul);   
+    
+}
+.cajaHijo p{
+    color: var(--negroTotal);
+}
+
+@media only screen and  (min-width: 1000px){
+    .cajaPadre{
+    
+        height: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap:nowrap;
+        overflow:visible;
+        align-items: center;
+        
+    }
+
+    .cajaHijo:hover{
+      box-shadow: 2px 2px 15px #e27d1e inset;
+    }
+    
+}
+
+/*------------------------------------------------ESTILO SECCCION 2------------------------------------------------------------------------*/
+
+.seccion2 .cajaPadre{
+    padding: 10px;
+    background-image: url(../img/inicio/bannerMundial.webp);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cajaArriba{
+    height: 70%;
+    text-align: center;
+    padding: 20px;
+    background: rgba(100, 20, 20, 0.24);
+    color: var(--blanco)
+}
+
+.cajaAbajo{
+    height: 30%;
+    background: rgba(100, 20, 20, 0.24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cajaArriba h2{
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    margin: 0;
+    padding: 25px 0;
+}
+
+.cajaArriba p{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 600px) {
+    .cajaAbajo{
+        
+        flex-direction: row;
+        
+    }
+
+    .cajaArriba h2{        
+        font-size: 50px;
+        
+    }
+    .cajaArriba p{
+        font-size: 17px;
+        
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .cajaArriba {        
+        padding: 50px 0;
+        
+    }
+}
+
+/*--------------------Boton-------------------------*/
+button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: var(--negroTotal);
+    border: none;
+    color: var(--blanco);
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+   }
+   
+   button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+   button:hover span {
+    padding-right: 15px;
+   }
+   
+   button:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
+
+/*------------------------------------------------ESTILO SECCCION 3------------------------------------------------------------------------*/
+.seccion3 .cajaHijo{
+    
+    width: 290px;
+    height: 90%;
+    background-color: var(--azul2);    
+    border-radius: 5px;
+    border: 1px solid rgba(27, 34, 63, 0.623);
+    transition: all .2s;
+    box-shadow: 12px 12px 2px 1px rgba(27, 34, 63, 0.623);
+    padding: 20px 50px;    
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+
+}
+.seccion3 h2{
+    margin: 15px 5%;
+}
+
+.seccion3 h5{
+    width: 10%;
+}
+
+.seccion3 .cajaHijo p{
+    font-size: 30px;
+    margin: 5px;
+    height: 70%;
+    color: var(--blanco);
+    font-weight: 800;
+}
+
+@media only screen and  (min-width: 1000px){
+    
+
+    .seccion3 .cajaHijo{
+        margin: 0 20px;
+    }
+    .seccion3 .cajaHijo:hover{
+        transform: none;
+        box-shadow: -12px 12px 2px -1px rgba(27, 34, 63, 0.623);
+    }
+    .seccion3 .cajaHijo p{
+        margin:25px 0;
+    }
+}
+
+
+
+
+/*-------------------- Boton---------- */
+
+.seccion3 .boton{
+    display: flex;
+    height: 20%;
+    justify-content: end;
+    text-decoration: none;
+}
+.seccion3 button{
+    
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: var(--negroTotal);
+    background-color: var(--blanco);
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    
+  }
+  
+  .seccion3 button:hover {
+    background-color: var(--gris);
+    box-shadow: 0px 15px 20px rgba(179, 179, 179, 0.4);
+    color:var(--negroTotal);
+    transform: translateY(-7px);
+  }
+  
+  .seccion3 button:active {
+    transform: translateY(-1px);
+  }
+
+/*------------------------------------------------ESTILO SECCCION 4------------------------------------------------------------------------*/
+
+.seccion4{
+    display: flex;
+    background-color: var(--blanco);
+    flex-direction: column;
+    padding: 15px;
+    height: 80vh;
+    margin: 0 0 40px 0;
+}
+
+.cajaServicio{
+    margin: 15px 0;
+    height: 25%;
+}
+
+.cajaServicio h2{
+    font-family: 'Oxygen', sans-serif;    
+    font-size: 24px;
+}
+
+.cajaServicio p{
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 600px) {
+    .seccion4{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items:center ;
+        height: 50vh;
+    }
+
+    .cajaServicio{
+        margin: 10px 25px;
+    }
+
+    
+
+}
+
+/*------------------------------------------------ESTILO SECCCION PUBLICIDAD------------------------------------------------------------------------*/
+
+.publicidad{
+    max-height: 150px;
+    background-color: var(--gris);
+    padding: 10px;
+}
+.publicidad img{
+   max-width: 100%;
+   height: auto;
+   filter:drop-shadow(4px 6px 2px var(--naranja));
+   display: block;
+   margin: auto;
+}
+
+/*------------------------------------------------ANIMACION------------------------------------------------------------------------*/
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active{
+  transform:translateY(0px);
+  opacity:1
+}
+
+
+/*------------------------------------------------ESTILOS BASADOS EN 12 COLUMNAS------------------------------------------------------------------------*/
+
+
+/*ESTILO PARA DISPOSITIVOS MOVILES*/
+[class*="col-"]{
+    width: 100%;
+}
+
+
+/*ESTILO PARA TABLETS*/
+
+
+@media only screen and (min-width: 600px) {
+    .col-s-1{width:8.33% }
+    .col-s-2{width:16.66% }
+    .col-s-3{width:25% }
+    .col-s-4{width:33.33% }
+    .col-s-5{width:41.66% }
+    .col-s-6{width:50% }
+    .col-s-7{width:58.33% }
+    .col-s-8{width:66.66% }
+    .col-s-9{width:75% }
+    .col-s-10{width:83.33% }
+    .col-s-11{width:91.66% }
+    .col-s-12{width:100% }
+}
+
+/*ESTILO PARA ESCRITORIO*/
+@media only screen and (min-width: 768px) {
+    .col-1{width:8.33% }
+    .col-2{width:16.66% }
+    .col-3{width:25% }
+    .col-4{width:33.33% }
+    .col-5{width:41.66% }
+    .col-6{width:50% }
+    .col-7{width:58.33% }
+    .col-8{width:66.66% }
+    .col-9{width:75% }
+    .col-10{width:83.33% }
+    .col-11{width:91.66% }
+    .col-12{width:100% }
+}
